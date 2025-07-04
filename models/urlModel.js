@@ -44,7 +44,7 @@ const findByShortUrl = (shortUrl) => {
 const addUrl = (originalUrl) => {
   const urls = getAllUrls();
   const shortUrl = urls.length + 1;
-  
+
   // Check if URL already exists
   const existingUrl = findByOriginalUrl(originalUrl);
   if (existingUrl) {
@@ -54,11 +54,11 @@ const addUrl = (originalUrl) => {
   // Add new URL
   const newUrl = { original_url: originalUrl, short_url: shortUrl };
   urls.push(newUrl);
-  
+
   if (saveUrls(urls)) {
     return newUrl;
   }
-  
+
   return null;
 };
 
@@ -74,5 +74,5 @@ module.exports = {
   findByOriginalUrl,
   findByShortUrl,
   addUrl,
-  isValidUrl
+  isValidUrl,
 };
